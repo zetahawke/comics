@@ -2,10 +2,10 @@
 <widget id="com.ionicframework.comics290294" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>comics</name>
   <description>
-        An Ionic Framework and Cordova project.
+        Web app for list comics from marvel api webservice
     </description>
-  <author email="you@example.com" href="http://example.com.com/">
-      Your Name Here
+  <author email="michel.szinavel@gmail.com" href="http://example.com.com/">
+      Michel Bryan Szinavel Reyes
     </author>
   <content src="index.html"/>
   <access origin="*"/>

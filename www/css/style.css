@@ -1,1 +1,8 @@
-/* Empty. Add your own CSS if you like */
+@font-face{
+	font-family: 'roboto';
+	src: url('fonts/Roboto-Thin.ttf');
+}
+
+body{
+	font-family: roboto !important;
+}
