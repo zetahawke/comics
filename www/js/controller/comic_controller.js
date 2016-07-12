@@ -29,7 +29,11 @@
     		$scope.issueNumber = comic.issueNumber;
     		$scope.pages = comic.pageCount;
 
-        $('.img-par').attr('src', $scope.image);
+        $('.background').attr('src', $scope.image);
+        $('.title').text($scope.title);
+        $('.description').text($scope.description);
+        $('.issue').text($scope.issueNumber);
+        $('.pages').text($scope.pages);
     	});
 
 

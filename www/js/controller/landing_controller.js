@@ -26,7 +26,7 @@
       }, function(data){
         
         $.each(data.data.data.results, function (index, obj){
-          // debugger;
+          debugger;
           var desc = '';
           if(obj.description){
             desc = obj.description.substring(0, 40) + '...';

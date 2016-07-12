@@ -28,21 +28,23 @@ html, body {
 	margin-top: 20%;
 }
 
-.background{
-	display: table;
-	height: 100%;
-	position: relative;
-	width: 100%;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-	transition: 0.5s;
+.gray{
+	background-color: #90a4ae;
 }
 
-.text-vcenter {
-	display: table-cell;
-	text-align: center;
-	vertical-align: middle;
-	padding: 0 10%;
+.green{
+	background-color: #26a69a;
+}
+
+.background{
+	min-height: 200px;
+	min-width: 150px;
+	max-width: 500px;
+	max-height: 700px;
+}
+
+@media (max-width: 500px) { 
+	.brand-logo{
+		font-size: 1.1rem !important;
+	}
 }

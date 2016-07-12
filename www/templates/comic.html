@@ -1,18 +1,38 @@
 <ion-view cache-view="false" view-title="">
   <ion-content class="">
 
-	<div class="background">
-	  	<div class="text-vcenter">
-	    	<div class="row container">
-		      <h2 class="header">Parallax</h2>
-		      <h3 ng-model="title"></h3>
-		    	<p ng-model="description"></p>
-		    	<p ng-model="issueNumber"></p>
-		    	<p ng-model="pages"></p>
-	    	</div>
-	  	</div>
-	</div>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo center search title"></a>
+    </div>
+  </nav>
 
+    <div class="row responsive-sm responsive-md responsive-lg">
+
+      <div class="col">
+        <!-- Grey navigation panel -->
+        <img class="responsive-img background" src="">
+        <br>
+        <p class=""></p>
+      </div>
+
+      <div class="col">
+        <!-- Teal page content  -->
+        <h5>Título:</h5>
+        <p class="title"></p>
+        <h5>Descripción:</h5>
+        <p class="description"></p>
+        <h5>Creadores:</h3>
+        <p class="creatos" ng-repeat="creator in creators">
+          {{creator.name}} - {{creator.role}}
+        </p>
+        <h5>Otra información:</h5>
+        <p>
+          número de páginas: <span class="pages"></span> | número del issue: <span class="issue"></span>
+        </p>
+      </div>
+
+    </div>
 
 
   </ion-content>
