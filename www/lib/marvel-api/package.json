@@ -1,0 +1,89 @@
+{
+  "_args": [
+    [
+      "marvel-api",
+      "C:\\Users\\asus\\Desktop\\kunder-test\\comics"
+    ]
+  ],
+  "_from": "marvel-api@latest",
+  "_id": "marvel-api@1.0.0",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/marvel-api",
+  "_nodeVersion": "5.4.0",
+  "_npmOperationalInternal": {
+    "host": "packages-6-west.internal.npmjs.com",
+    "tmp": "tmp/marvel-api-1.0.0.tgz_1455206801366_0.9028579420410097"
+  },
+  "_npmUser": {
+    "email": "matt@modulus.io",
+    "name": "fiveisprime"
+  },
+  "_npmVersion": "3.3.12",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "marvel-api",
+    "raw": "marvel-api",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/marvel-api/-/marvel-api-1.0.0.tgz",
+  "_shasum": "03c954b262ad3ba5f39583f0d535fe44709c6e52",
+  "_shrinkwrap": null,
+  "_spec": "marvel-api",
+  "_where": "C:\\Users\\asus\\Desktop\\kunder-test\\comics",
+  "author": {
+    "email": "matt@modulus.io",
+    "name": "Matt Hernandez"
+  },
+  "bugs": {
+    "url": "https://github.com/fiveisprime/marvel-api/issues"
+  },
+  "dependencies": {
+    "q": "~1.0.0",
+    "request": "~2.33.0"
+  },
+  "description": "Node.js wrapper for working with the official Marvel Comics API",
+  "devDependencies": {
+    "istanbul": "~0.2.4",
+    "jshint": "~2.4.3",
+    "mocha": "~1.17.1",
+    "nock": "~0.27.2",
+    "should": "~3.1.2"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "03c954b262ad3ba5f39583f0d535fe44709c6e52",
+    "tarball": "https://registry.npmjs.org/marvel-api/-/marvel-api-1.0.0.tgz"
+  },
+  "gitHead": "d31c822acebffb22fa6525820e9911b197565777",
+  "homepage": "http://fiveisprime.github.io/marvel-api/",
+  "keywords": [
+    "marvel",
+    "api"
+  ],
+  "license": "ISC",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "email": "matt@modulus.io",
+      "name": "fiveisprime"
+    }
+  ],
+  "name": "marvel-api",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/fiveisprime/marvel-api.git"
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "version": "1.0.0"
+}

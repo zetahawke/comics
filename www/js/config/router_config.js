@@ -12,6 +12,11 @@
       url: '/',
       templateUrl: 'templates/landing.html',
       controller: 'LandingController'
+    })
+    .state('comic', {
+      url: '/comic/:id',
+      templateUrl: 'templates/comic.html',
+      controller: 'ComicController'
     });
 
     // if none of the above states are matched, use this as the fallback

@@ -1,8 +1,48 @@
 @font-face{
 	font-family: 'roboto';
-	src: url('fonts/Roboto-Thin.ttf');
+	src: url('../fonts/roboto/Roboto-Light.ttf');
 }
 
 body{
 	font-family: roboto !important;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+.cont {
+	padding-top: 20px;
+}
+
+.brand-img{
+	padding: 5px;
+}
+
+.search{
+	padding-top: 15px !important;
+}
+
+.section-white{
+	margin-top: 20%;
+}
+
+.background{
+	display: table;
+	height: 100%;
+	position: relative;
+	width: 100%;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	transition: 0.5s;
+}
+
+.text-vcenter {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+	padding: 0 10%;
 }
