@@ -1,0 +1,7 @@
+{
+    "name": "comics",
+    "description": "comics: An Ionic project",
+    "repository": "https://github.com/zetahawke/comics",
+    "logo": "http://orig01.deviantart.net/b22a/f/2008/291/6/0/marvel_comics_logo_by_stacalkas.jpg",
+    "keywords": ["ionic", "comics", "marvel"]
+}
