@@ -78,6 +78,11 @@ html, body {
 	margin: 0;
 }
 
+#dropdown1{
+	width: 194.5px;
+	transition: 0.5s;
+}
+
 
 
 @media (max-width: 500px) { 

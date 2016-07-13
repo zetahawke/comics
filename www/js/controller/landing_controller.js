@@ -99,5 +99,16 @@
         }
       };
 
+      var is_hidden = 0;
+      $scope.dropdown = function(){
+        if(is_hidden = 0){
+          is_hidden = 1;
+          $('#dropdown1').css('opacity', '1').css('display', 'block');
+        }else{
+          is_hidden = 0;
+          $('#dropdown1').css('opacity', '0').css('display', 'none');
+        }
+      };
+
     }]);
 }).call(this);
