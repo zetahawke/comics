@@ -17,6 +17,7 @@
       $scope.page_items = [];
       $scope.page_index = 1;
       $scope.pages = [];
+      $scope.is_hidden = 0;
 
       $('.btn-cancel').on('click', function(){
         $('.search').val('');
@@ -99,13 +100,14 @@
         }
       };
 
-      var is_hidden = 0;
+      
       $scope.dropdown = function(){
-        if(is_hidden = 0){
-          is_hidden = 1;
+        // console.log($scope.is_hidden);
+        if($scope.is_hidden == 0){
+          $scope.is_hidden = 1;
           $('#dropdown1').css('opacity', '1').css('display', 'block');
         }else{
-          is_hidden = 0;
+          $scope.is_hidden = 0;
           $('#dropdown1').css('opacity', '0').css('display', 'none');
         }
       };
