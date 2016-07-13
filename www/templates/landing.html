@@ -15,17 +15,20 @@
     <div class="cont wrapper">
       <div class="row responsive-sm responsive-md responsive-lg">
         <div class="col-md-8">
-          <div class="preloader-wrapper small active" ng-show="page_items.length <= 0">
-            <div class="spinner-layer spinner-green-only">
-              <div class="circle-clipper left">
-                <div class="circle"></div>
-              </div><div class="gap-patch">
-                <div class="circle"></div>
-              </div><div class="circle-clipper right">
-                <div class="circle"></div>
+          <div class="row center-align">
+            <div class="preloader-wrapper small active float-center" ng-show="page_items.length <= 0">
+              <div class="spinner-layer spinner-green-only">
+                <div class="circle-clipper left">
+                  <div class="circle"></div>
+                </div><div class="gap-patch">
+                  <div class="circle"></div>
+                </div><div class="circle-clipper right">
+                  <div class="circle"></div>
+                </div>
               </div>
             </div>
           </div>
+
           <div class="row">
             <div class="center-align float-center">
               <!-- Dropdown Trigger -->
@@ -52,13 +55,16 @@
               <a href="#!" class="secondary-content" ui-sref="comic({id: {{question.goto}}})" style="margin-top: 15px;"><i class="material-icons">send</i></a>
             </li>
           </ul>
-          <div class="float-center">
-            <ul class="pagination">
-              <li class="waves-effect" ng-class="{disabled: page_index <= 1}"><a href="#!" ng-click="chevron(-1)"><i class="material-icons">chevron_left</i></a></li>
-              <li ng-repeat=" page in pages" ng-class="{active: page == page_index}"><a href="#!" ng-click="change_page(page)">{{page}}</a></li>
-              <li class="waves-effect" ng-class="{disabled: page_index >= pages.length}"><a href="#!" ng-click="chevron(1)"><i class="material-icons">chevron_right</i></a></li>
-            </ul>
+          <div class="row center-align">
+            <div class="float-center">
+              <ul class="pagination">
+                <li class="waves-effect" ng-class="{disabled: page_index <= 1}"><a href="#!" ng-click="chevron(-1)"><i class="material-icons">chevron_left</i></a></li>
+                <li ng-repeat=" page in pages" ng-class="{active: page == page_index}"><a href="#!" ng-click="change_page(page)">{{page}}</a></li>
+                <li class="waves-effect" ng-class="{disabled: page_index >= pages.length}"><a href="#!" ng-click="chevron(1)"><i class="material-icons">chevron_right</i></a></li>
+              </ul>
+            </div>
           </div>
+          
         </div>
       </div>
     </div>
