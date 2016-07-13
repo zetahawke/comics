@@ -47,10 +47,11 @@
             <li class="collection-item avatar" ng-repeat="question in page_items[page_index - 1]  | filter:searchText">
               <img ng-src="{{question.img}}" alt="" class="square responsive-img" style="margin-top:8px">
               <span class="title">{{question.title}}</span>
-              <p>{{question.text}} <br>
+              <p><span>{{question.text}}</span> <span ng-show="question.text == '' ">Descripción no disponible aún...</span> <br>
                 <span class="creatos" ng-show="question.creators.name != ''">
                   {{question.creators.name}} - {{question.creators.role}}
                 </span>
+                <span ng-show="question.creators.name == ''">Creadores no disponibles aún...</span>
               </p>
               <a href="#!" class="secondary-content" ui-sref="comic({id: {{question.goto}}})" style="margin-top: 15px;"><i class="material-icons">send</i></a>
             </li>
