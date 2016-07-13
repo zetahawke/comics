@@ -1,10 +1,10 @@
-<ion-view cache-view="false" view-title="">
+<ion-view cache-view="true" view-title="">
   <ion-content class="">
     <div class="bar bar-header item-input-inset">
       <img src="pub/los-vengadores.png" width="40" alt="" class="brand-img">
       <label class="item-input-wrapper">
         <i class="icon ion-ios-search placeholder-icon"></i>
-        <input type="search" placeholder="Search" class="search" ng-model="searchText">
+        <input type="search" placeholder="Filtrar (nombre del cómic o año)" class="search" ng-model="searchText">
       </label>
       <button class="button btn-cancel">
         Cancel
@@ -13,21 +13,52 @@
 
 
     <div class="cont wrapper">
-      <div class="row responsive-sm">
-        <div class="col">
-          <ul class="collection">
+      <div class="row responsive-sm responsive-md responsive-lg">
+        <div class="col-md-8">
+          <div class="preloader-wrapper small active" ng-show="page_items.length <= 0">
+            <div class="spinner-layer spinner-green-only">
+              <div class="circle-clipper left">
+                <div class="circle"></div>
+              </div><div class="gap-patch">
+                <div class="circle"></div>
+              </div><div class="circle-clipper right">
+                <div class="circle"></div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="center-align float-center">
+              <!-- Dropdown Trigger -->
+              <a class='dropdown-button btn' href='#' data-activates='dropdown1'>Items por página</a>
 
-            <li class="collection-item avatar" ng-repeat="question in serched | filter:searchText">
-              <img src="{{question.img}}" alt="" class="circle" style="margin-top:10px">
+              <!-- Dropdown Structure -->
+              <ul id='dropdown1' class='dropdown-content'>
+                <li><a href="#!" ng-click="paginator(10)">10</a></li>
+                <li><a href="#!" ng-click="paginator(20)">20</a></li>
+                <li><a href="#!" ng-click="paginator(50)">50</a></li>
+                <li><a href="#!" ng-click="paginator(100)">todos</a></li>
+              </ul>
+            </div>
+          </div>
+          <ul class="collection">
+            <li class="collection-item avatar" ng-repeat="question in page_items[page_index - 1]  | filter:searchText">
+              <img ng-src="{{question.img}}" alt="" class="square responsive-img" style="margin-top:8px">
               <span class="title">{{question.title}}</span>
               <p>{{question.text}} <br>
-                 Second Line
+                <span class="creatos" ng-show="question.creators.name != ''">
+                  {{question.creators.name}} - {{question.creators.role}}
+                </span>
               </p>
               <a href="#!" class="secondary-content" ui-sref="comic({id: {{question.goto}}})" style="margin-top: 15px;"><i class="material-icons">send</i></a>
             </li>
-
-
           </ul>
+          <div class="float-center">
+            <ul class="pagination">
+              <li class="waves-effect" ng-class="{disabled: page_index <= 1}"><a href="#!" ng-click="chevron(-1)"><i class="material-icons">chevron_left</i></a></li>
+              <li ng-repeat=" page in pages" ng-class="{active: page == page_index}"><a href="#!" ng-click="change_page(page)">{{page}}</a></li>
+              <li class="waves-effect" ng-class="{disabled: page_index >= pages.length}"><a href="#!" ng-click="chevron(1)"><i class="material-icons">chevron_right</i></a></li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

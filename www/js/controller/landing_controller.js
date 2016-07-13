@@ -14,50 +14,90 @@
       */
       $scope.searchText = '';
       $scope.serched = [];
+      $scope.page_items = [];
+      $scope.page_index = 1;
+      $scope.pages = [];
 
       $('.btn-cancel').on('click', function(){
         $('.search').val('');
       });
 
-      MarvelServices.getComics(2, 0).then(function(err){
+      MarvelServices.getComics(100, 0).then(function(err){
         //alert('Hubo un problema intentando obtener la lista de comics, porfavor vuelva mas tarde.');
         $('.wrapper').slideUp(0);
         $('.error-cont').removeClass('hide').text('hubo un problema al intentar obtener la lista de comics');
       }, function(data){
         
         $.each(data.data.data.results, function (index, obj){
-          debugger;
           var desc = '';
           if(obj.description){
             desc = obj.description.substring(0, 40) + '...';
           }
+          var creator = {
+            name: '',
+            role: ''
+          }
+          if(obj.creators.items.length > 0){
+            var creator = {
+              name: obj.creators.items[0].name,
+              role: obj.creators.items[0].role
+            }
+          }
+          var img = '';
+          if(obj.images[0]){
+            img = obj.images[0].path + '/portrait_medium.' + obj.images[0].extension;
+          }else{
+            img = '/pub/images.jpg';
+          }
           var com = {
             text: desc,
             goto: obj.id,
-            img: '' + obj.images[0].path + '/standard_medium.' + obj.images[0].extension,
-            title: '' + obj.title
+            img: '' +img,
+            title: '' + obj.title,
+            creators: creator
           };  
-          $scope.serched.push(com); 
+          $scope.serched.push(com);
         });
+        $scope.paginator(10);
       });
 
-      // var api = require('marvel-api');
-      // var marvel = api.createClient({
-      //   publicKey: ENV.API_PUBLIC_KEY,
-      //   privateKey: ENV.API_PRIVATE_KEY
-      // });
+      $scope.paginator = function(limit){
+        var count = 0;
+        $scope.col = [];
+        $scope.page_items = [];
+        $scope.page_index = 1;
+        $scope.pages = [];
+        $.each($scope.serched, function(index, item){
+          // if(count >= limit){
+          if(((index+1) % limit) == 0 ){
+            $scope.pages.push(count +1);
+            $scope.col.push(item);
+            $scope.page_items.push($scope.col);
+            $scope.col = [];
+            count++;
+          }else{
+            $scope.col.push(item);
+            if(index == $scope.serched.length - 1){
+              $scope.pages.push(count +1);
+              $scope.page_items.push($scope.col);
+              $scope.col = [];
+              count++;
+            }
+          }
+        });
+      };
 
+      $scope.change_page = function(p){
+        $scope.page_index = p;
+      };
 
-
-      // marvel.comics.findAll(function(err, results){
-      //   if (err){
-      //     return console.error(err);
-      //   }
-      //   else{
-      //     console.log(results)
-      //   }
-
-      // });
+      $scope.chevron = function(p){
+        // if($scope.page_index < $scope.pages.length && $scope.page_index > 1){
+        if(($scope.page_index == 1 && p == -1) || ($scope.page_index == $scope.pages.length && p == 1)){
+        }else{
+          $scope.page_index += p;
+        }
+      };
 
     }]);
 }).call(this);

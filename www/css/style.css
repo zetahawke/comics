@@ -36,15 +36,70 @@ html, body {
 	background-color: #26a69a;
 }
 
-.background{
+.thisImage{
 	min-height: 200px;
 	min-width: 150px;
 	max-width: 500px;
 	max-height: 700px;
 }
 
+.square{
+	position: absolute;
+    width: 47px;
+    height: auto;
+    overflow: hidden;
+    left: 15px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.collection .collection-item.avatar {
+    min-height: 100px;
+    padding-left: 72px;
+    position: relative;
+    padding-right: 45px;
+}
+
+.btn-items{
+	padding-right: 11px;
+	margin-top: 20px;
+}
+
+.btn-items2{
+	padding-right: 7px;
+	margin-top: 20px;
+}
+
+.float-center{
+	margin:0 auto;
+}
+
+.fixed-action-btn.horizontal ul li{
+	margin: 0;
+}
+
+
+
 @media (max-width: 500px) { 
 	.brand-logo{
 		font-size: 1.1rem !important;
+	}
+}
+
+@media (min-width: 667px){
+	.col-md-8{
+		width: 80%;
+		float: none;
+		text-align: center;
+		margin: 0 auto;
+	}
+}
+
+@media (min-width: 992px){
+	.col-md-8{
+		width: 750px;
+		float: none;
+		text-align: center;
+		margin: 0 auto;
 	}
 }

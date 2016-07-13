@@ -1,36 +1,40 @@
-<ion-view cache-view="false" view-title="">
+<ion-view cache-view="true" view-title="">
   <ion-content class="">
 
   <nav>
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo center search title"></a>
+      <a href="#" class="brand-logo center search thisTitle"></a>
     </div>
   </nav>
 
     <div class="row responsive-sm responsive-md responsive-lg">
+      <div class="col-md-8">
+        <div class="col">
+          <!-- Grey navigation panel -->
+          <img class="responsive-img thisImage" src="">
+          <br>
+          <p class=""></p>
+        </div>
 
-      <div class="col">
-        <!-- Grey navigation panel -->
-        <img class="responsive-img background" src="">
-        <br>
-        <p class=""></p>
+        <div class="col">
+          <!-- Teal page content  -->
+          <h5>Título:</h5>
+          <p class="thisTitle"></p>
+          <h5>Descripción:</h5>
+          <p class="thisDescription"></p>
+          <h5>Creadores:</h3>
+          <p class="thisCreators" ng-repeat="creator in thisCreators">
+            {{creator.name}} - {{creator.role}}
+          </p>
+          <h5>Otra información:</h5>
+          <p>
+            número de páginas: <span class="thisPages"></span> | número del issue: <span class="thisIssueNumber"></span>
+          </p>
+        </div>
+
+        <a class="btn-floating waves-effect waves-light red" href="#"><i class="ion-ios-arrow-back" style="padding-top:1px; padding-right:3px;">back</i></a>
       </div>
 
-      <div class="col">
-        <!-- Teal page content  -->
-        <h5>Título:</h5>
-        <p class="title"></p>
-        <h5>Descripción:</h5>
-        <p class="description"></p>
-        <h5>Creadores:</h3>
-        <p class="creatos" ng-repeat="creator in creators">
-          {{creator.name}} - {{creator.role}}
-        </p>
-        <h5>Otra información:</h5>
-        <p>
-          número de páginas: <span class="pages"></span> | número del issue: <span class="issue"></span>
-        </p>
-      </div>
 
     </div>
 
